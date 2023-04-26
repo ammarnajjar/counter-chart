@@ -5,14 +5,15 @@ let limit = limitInput.value;
 
 function getCfg(limit) {
   const long = input.filter(x => x > limit).length;
-  const longPercent = long * 100 / input.length;
+  const inputLength = input.length
+  const longPercent = long / inputLength;
   const data = [
     {
-      id: `< ${limit} min (${Number((1 - longPercent) * 100).toFixed(2)} %)`,
+      id: `< ${limit} min (${long}, ${Number((1 - longPercent) * 100).toFixed(2)} %)`,
       value: (1 - longPercent) * 100,
     },
     {
-      id: `> ${limit} min (${Number(longPercent *100).toFixed(2)} %)`,
+      id: `> ${limit} min (${inputLength - long}, ${Number(longPercent *100).toFixed(2)} %)`,
       value: longPercent * 100,
     },
   ];
