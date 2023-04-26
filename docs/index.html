@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jobs</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+      }
+      .container {
+        width: 800px;
+      }
+      .slider {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #limit {
+        margin-left: 0.5rem;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2 id="title"></h2>
+      <div class="slider">
+        <label id="limit" for="percentage"></label>
+        <input
+          type="range"
+          id="percentage"
+          name="percentage"
+          min="0"
+          max="120"
+        />
+      </div>
+      <canvas id="chart"></canvas>
+    </div>
+  </body>
+</html>
