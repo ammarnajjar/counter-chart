@@ -9,11 +9,11 @@ function getCfg(limit) {
   const longPercent = long / inputLength;
   const data = [
     {
-      id: `< ${limit} min (${long}, ${Number((1 - longPercent) * 100).toFixed(2)} %)`,
+      id: `< ${limit} min (${inputLength - long}, ${Number((1 - longPercent) * 100).toFixed(2)} %)`,
       value: (1 - longPercent) * 100,
     },
     {
-      id: `> ${limit} min (${inputLength - long}, ${Number(longPercent *100).toFixed(2)} %)`,
+      id: `> ${limit} min (${long}, ${Number(longPercent *100).toFixed(2)} %)`,
       value: longPercent * 100,
     },
   ];
